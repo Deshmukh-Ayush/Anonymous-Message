@@ -28,29 +28,32 @@ import axios from "axios";
 import { ApiResponse } from "@/types/ApiResponse";
 
 type MessageCardProps = {
-    _id: string;
-    message: Message;
-    onMessageDelete: (messageId: string) => void
-}
 
-const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
+  message: Message;
+  onMessageDelete: (messageId: string) => void;
+};
 
-    const { toast } = useToast()
+const MessageCard: React.FC<MessageCardProps> = ({ message, onMessageDelete }: MessageCardProps) => {
+  const { toast } = useToast();
 
-    const handleDeleteConfirm = async () => {
-        const response = await axios.delete<ApiResponse>(`/api/delete-message/${message._id}`)
-        toast({
-            title: response.data.message
-        })
-        onMessageDelete(message._id as string)
-    }
+  const handleDeleteConfirm = async () => {
+    const response = await axios.delete<ApiResponse>(
+      `/api/delete-message/${message._id}`
+    );
+    toast({
+      title: response.data.message,
+    });
+    onMessageDelete(message._id as string);
+  };
   return (
     <Card>
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <AlertDialog>
           <AlertDialogTrigger asChild>
-            <Button variant="destructive"><X className="w-5 h-5" /></Button>
+            <Button variant="destructive">
+              <X className="w-5 h-5" />
+            </Button>
           </AlertDialogTrigger>
           <AlertDialogContent>
             <AlertDialogHeader>
@@ -62,7 +65,9 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction onClick={handleDeleteConfirm}>Continue</AlertDialogAction>
+              <AlertDialogAction onClick={handleDeleteConfirm}>
+                Continue
+              </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
