@@ -60,6 +60,8 @@ export async function POST(request: Request) {
       });
 
       await newUser.save();
+      
+      console.log("User is saved successfully")
     }
 
     // Send verification email
