@@ -23,7 +23,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 
-const page = () => {
+const SignUpPage = () => {
   const [username, setUsername] = useState("");
   const [usernameMessage, setUsernameMessage] = useState("");
   const [isCheckingUsername, setIsCheckingUsername] = useState(false);
@@ -108,7 +108,7 @@ const page = () => {
                   <FormLabel>Username</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="username"
+                      placeholder="Enter a Unique Username"
                       {...field}
                       onChange={(e) => {
                         field.onChange(e);
@@ -124,7 +124,7 @@ const page = () => {
                         : "text-red-500"
                     }`}
                   >
-                     {usernameMessage}
+                    {usernameMessage}
                   </p>
                   <FormMessage />
                 </FormItem>
@@ -185,4 +185,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default SignUpPage;
