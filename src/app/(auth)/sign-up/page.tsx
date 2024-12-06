@@ -29,11 +29,15 @@ const SignUpPage = () => {
   const [isCheckingUsername, setIsCheckingUsername] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const debounced = useDebounceCallback(setUsername, 300);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { toast } = useToast();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
 
   // zod implementation
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {

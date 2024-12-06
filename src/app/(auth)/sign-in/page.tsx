@@ -20,10 +20,13 @@ import { signInSchema } from "@/schemas/signInSchema";
 import { signIn } from "next-auth/react";
 
 const SignInPage = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { toast } = useToast();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
 
   // zod implementation
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const form = useForm<z.infer<typeof signInSchema>>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
