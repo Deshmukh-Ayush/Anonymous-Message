@@ -94,11 +94,11 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+    <div className="flex justify-center items-center min-h-screen bg-black text-white">
+      <div className="w-full max-w-md p-8 space-y-8 bg-black border-[2px] rounded-lg shadow-md">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
-            Join Mystery Message
+          <h1 className="text-2xl font-extrabold tracking-tight lg:text-5xl mb-6">
+            Anonymous Feedback
           </h1>
           <p className="mb-4">Sign up to start your anonymous adventure</p>
         </div>
