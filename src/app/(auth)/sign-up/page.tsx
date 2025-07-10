@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { Loader2, MoveRight } from "lucide-react";
 
 const SignUpPage = () => {
   const [username, setUsername] = useState("");
@@ -94,11 +94,11 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-black text-white">
-      <div className="w-full max-w-md p-8 space-y-8 bg-black border-[2px] rounded-lg shadow-md">
+    <div className="flex justify-center items-center min-h-screen bg-gray-950 text-white">
+      <div className="w-full max-w-md p-8 space-y-8 bg-gray-900 rounded-lg shadow-md">
         <div className="text-center">
           <h1 className="text-2xl font-extrabold tracking-tight lg:text-5xl mb-6">
-            Anonymous Feedback
+            Whispr
           </h1>
           <p className="mb-4">Sign up to start your anonymous adventure</p>
         </div>
@@ -112,6 +112,7 @@ const SignUpPage = () => {
                   <FormLabel>Username</FormLabel>
                   <FormControl>
                     <Input
+                      className="text-gray-700"
                       placeholder="Enter a Unique Username"
                       {...field}
                       onChange={(e) => {
@@ -142,7 +143,11 @@ const SignUpPage = () => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Email" {...field} />
+                    <Input
+                      className="text-gray-700"
+                      placeholder="Email"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -156,14 +161,23 @@ const SignUpPage = () => {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input type="password" placeholder="password" {...field} />
+                    <Input
+                      className="text-gray-700"
+                      type="password"
+                      placeholder="password"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <Button type="submit" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              className="group mt-6 px-12 py-3 bg-gray-950 hover:bg-gray-900 hover:text-white text-neutral-100 backdrop-blur-sm border border-transparent hover:border-white/30"
+              variant={"outline"}
+            >
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -172,6 +186,7 @@ const SignUpPage = () => {
               ) : (
                 "Signup"
               )}
+              <MoveRight className="ml-2 transform transition-transform duration-300 group-hover:rotate-[-45deg]" />
             </Button>
           </form>
         </Form>

@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { signInSchema } from "@/schemas/signInSchema";
 import { signIn } from "next-auth/react";
+import { MoveRight } from "lucide-react";
 
 const SignInPage = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -63,11 +64,11 @@ const SignInPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-black text-white">
-      <div className="w-full max-w-md p-8 space-y-8 bg-black border-[2px] rounded-lg shadow-md">
+    <div className="flex justify-center items-center min-h-screen bg-gray-950 text-neutral-300">
+      <div className="w-full max-w-md p-8 space-y-8 bg-gray-900 rounded-lg shadow-md">
         <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-6">
-            Join Anonymous Feedback
+          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl text-white">
+            Join Whispr
           </h1>
           <p className="mb-4">Sign in to start your anonymous adventure</p>
         </div>
@@ -110,8 +111,13 @@ const SignInPage = () => {
               )}
             />
 
-            <Button className="border-[1px]" type="submit">
+            <Button
+              type="submit"
+              className="group mt-6 px-12 py-3 bg-gray-950 hover:bg-gray-900 hover:text-white text-neutral-100 backdrop-blur-sm border border-transparent hover:border-white/30"
+              variant={"outline"}
+            >
               Sign In
+              <MoveRight className="ml-2 transform transition-transform duration-300 group-hover:rotate-[-45deg]" />
             </Button>
           </form>
         </Form>
