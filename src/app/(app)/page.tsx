@@ -1,6 +1,6 @@
 "use client";
 
-import { MoveRight, Shield } from "lucide-react";
+import { Instagram, Linkedin, MoveRight, Shield, X } from "lucide-react";
 import { Container } from "@/components/container";
 
 import { Cherry_Cream_Soda } from "next/font/google";
@@ -16,7 +16,7 @@ import { motion } from "motion/react";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full flex flex-col items-center bg-gray-950 py-8">
+    <main className="min-h-screen w-full flex flex-col items-center bg-gray-950 pt-8">
       <Container className="w-full max-w-5xl px-4">
         <motion.div
           whileHover={{
@@ -91,6 +91,20 @@ export default function Home() {
           </div>
         </div>
       </Container>
+      <footer className="w-full mt-10 py-2 px-4 bg-gray-900 text-neutral-100 flex items-center justify-between">
+        <h1 className="text-lg">Whispr</h1>
+        <div className="flex gap-4">
+          <Link href="https://x.com/everywhereayush">
+            <X />
+          </Link>
+          <Link href="https://www.linkedin.com/in/ayush-deshmukh-144a86277/">
+            <Linkedin />
+          </Link>
+          <Link href="https://www.instagram.com/everywhereayush">
+            <Instagram />
+          </Link>
+        </div>
+      </footer>
     </main>
   );
 }
